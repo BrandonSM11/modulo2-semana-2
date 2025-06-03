@@ -1,0 +1,119 @@
+body {
+    background-color: aqua;
+}
+
+div {
+    color: blue;
+}
+
+.highlight {
+    color: red;
+}
+
+/* Primer box más grande */
+.box.highlight#special {
+    width: 400px;
+    height: 180px;
+    padding: 30px;
+    font-size: 1.2em;
+    animation: colorScale 4s infinite alternate ease-in-out;
+}
+
+.box {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #000000;
+    box-shadow: 5px 5px 5px black;
+    padding: 20px;
+    margin: 10px;
+
+    /* Animación combinada: cambio de color y escala */
+    animation: colorScale 4s infinite alternate ease-in-out;
+}
+
+.content {
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    border: 5px solid burlywood;
+}
+.content h2 {
+    margin: 40px 0 20px 0;
+}
+.inline-block {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: darksalmon;
+}
+
+.fixe-box {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    padding: 10px;
+}
+
+/* Animación de rotación lenta para rotate-box */
+.rotate-box {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    transform-origin: center;
+    animation: slowRotate 10s linear infinite;
+}
+
+/* Animación para rotar 360 grados */
+@keyframes slowRotate {
+    from {
+        transform: rotate(45deg);
+    }
+    to {
+        transform: rotate(405deg); /* 45 + 360 */
+    }
+}
+
+a {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: orangered;
+    text-decoration: underline;
+}
+
+.box::before {
+    content: "New!";
+    color: red;
+    font-weight: bold;
+}
+
+/* Animación fade-in (existente) */
+.fade-in {
+    animation: fade 2s ease-in-out;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animación combinada para .box */
+@keyframes colorScale {
+    0% {
+        background-color: rgb(255, 255, 255);
+        transform: scale(1);
+    }
+    50% {
+        background-color: rgb(200, 230, 255);
+        transform: scale(1.05);
+    }
+    100% {
+        background-color: rgb(255, 255, 255);
+        transform: scale(1);
+    }
+}
